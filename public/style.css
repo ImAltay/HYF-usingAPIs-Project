@@ -2,3 +2,32 @@ h1 {
   color: purple;
   text-align: center;
 }
+
+#search-form {
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  /* flex-direction: column; */
+  padding: 20px;
+  margin: auto;
+  gap: 10px;
+}
+
+#search-form input {
+  padding: 10px;
+  width: 50%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#search-form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: rgb(225, 217, 217);
+  color: white;
+}
+
+.container {
+  background-color: plum;
+}
