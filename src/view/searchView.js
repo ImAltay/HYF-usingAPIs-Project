@@ -1,5 +1,4 @@
 import {
-  USER_INTERFACE_ID,
   SEARCH_BUTTON_ID,
   SEARCH_INPUT_ID,
   SEARCH_FORM_ID,
@@ -16,6 +15,7 @@ export const createSearchElement = () => {
   form.id = SEARCH_FORM_ID;
   input.id = SEARCH_INPUT_ID;
   button.id = SEARCH_BUTTON_ID;
+  button.type = "button";
 
   button.innerHTML = "&#x1F50E";
 
