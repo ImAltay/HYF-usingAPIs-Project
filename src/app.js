@@ -1,4 +1,4 @@
-import { initWelcomePage } from "./pages/WelcomePage.js";
+import { initWelcomePage } from "./pages/welcomePage.js";
 
 const loadApp = () => {
   initWelcomePage();

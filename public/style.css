@@ -1,16 +1,82 @@
+:root {
+  /* bg */
+  --primary-color: #180414e1;
+  /*secondary bg */
+  --secondary-color: #de7ee7a9;
+  /* titles etc. */
+  --tertiary-color: rgb(207, 26, 26);
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#results {
+  /* display: none; */
+}
+
+#recipe {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin: 20px;
+  padding: 20px;
+}
+
+#recipe {
+  display: none;
+}
+
+#user-interface {
+  text-align: center;
+  justify-content: ceytnter;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+}
+
+.result {
+  border-radius: 6px;
+  box-shadow: 2px 5px 0 rgba(0, 0, 0, 0.3);
+  background-color: var(--primary-color);
+  padding: 20px;
+  margin: auto;
+  color: white;
+}
+
+.result-title {
+  color: var(--tertiary-color);
+}
+
+.result-image {
+  width: 150px;
+}
+
 h1 {
-  color: purple;
+  color: var(--tertiary-color);
   text-align: center;
 }
 
 #search-form {
+  background-color: var(--primary-color);
   text-align: center;
   justify-content: center;
   display: flex;
-  /* flex-direction: column; */
   padding: 20px;
   margin: auto;
   gap: 10px;
+  border-radius: 6px;
+  box-shadow: 2px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 #search-form input {
@@ -20,14 +86,97 @@ h1 {
   border: 1px solid #ccc;
 }
 
-#search-form button {
-  padding: 10px;
+/* READ MORE BUTTON */
+
+.btn {
+  display: block;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  background: #111;
+  border: 2px solid #111;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: rgb(225, 217, 217);
-  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.container {
-  background-color: plum;
+.btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* SEARCH BUTTON */
+/* source: https://getcssscan.com/css-buttons-examples  */
+#search-button {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#search-button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+#search-button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
