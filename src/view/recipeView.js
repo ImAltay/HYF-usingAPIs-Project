@@ -5,10 +5,6 @@ export const createRecipeElement = (result) => {
   element.classList.add(constants.RESULT_CLASS);
   element.id = constants.RECIPE_ID;
 
-  const button = document.createElement("button");
-  button.classList.add(constants.BUTTON_CLASS, constants.BACK_BUTTON_CLASS);
-  button.innerText = "Go Back";
-  element.appendChild(button);
   // h2 title
   const title = document.createElement("h2");
   title.innerText = result.strDrink;
@@ -22,12 +18,15 @@ export const createRecipeElement = (result) => {
   element.appendChild(image);
   // ingredients list
   const ingredients = document.createElement("ul");
+  const ingredientsTitle = document.createElement("h3");
+  ingredientsTitle.innerText = "Ingredients";
+  ingredients.appendChild(ingredientsTitle);
   const ingredientsList = Object.keys(result)
     .filter((key) => key.includes("strIngredient") && result[key])
     .map((key) => result[key]);
   ingredientsList.forEach((ingredient) => {
     const li = document.createElement("li");
-    li.innerText = ingredient;
+    li.innerText = "-" + ingredient;
     ingredients.appendChild(li);
   });
   element.appendChild(ingredients);
@@ -37,5 +36,11 @@ export const createRecipeElement = (result) => {
   instructions.innerText = result.strInstructions;
   instructions.classList.add(constants.RESULT_INSTRUCTIONS_CLASS);
   element.appendChild(instructions);
+  // Go Back button
+  const button = document.createElement("button");
+  button.classList.add(constants.BUTTON_CLASS, constants.BACK_BUTTON_CLASS);
+  button.innerText = "Go Back";
+  element.appendChild(button);
+
   return element;
 };

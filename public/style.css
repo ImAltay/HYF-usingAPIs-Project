@@ -23,9 +23,34 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  margin: 20px;
   padding: 20px;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  height: auto;
+}
+
+#recipe .result-title {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+#recipe ul {
+  list-style-type: none;
+  padding: 0;
+}
+#recipe ul h3 {
+  color: var(--tertiary-color);
+  padding: 0;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+#recipe .back-btn {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 1rem;
 }
 
 .hide {
