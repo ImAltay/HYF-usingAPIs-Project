@@ -8,6 +8,7 @@ export const createSearchElement = () => {
   form.id = constants.SEARCH_FORM_ID;
   input.id = constants.SEARCH_INPUT_ID;
   button.id = constants.SEARCH_BUTTON_ID;
+  input.placeholder = "Search drinks by name";
   button.type = "button";
   form.onsubmit = (e) => e.preventDefault();
 
