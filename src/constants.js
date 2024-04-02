@@ -5,6 +5,7 @@ export const constants = {
   SEARCH_INPUT_ID: "search-input",
   RESULTS_ID: "results",
   RECIPE_ID: "recipe",
+  LOADING_ID: "loading",
   // Classes
   CONTAINER_CLASS: "container",
   RESULT_CLASS: "result",
