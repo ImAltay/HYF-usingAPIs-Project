@@ -6,6 +6,8 @@ export const constants = {
   RESULTS_ID: "results",
   RECIPE_ID: "recipe",
   LOADING_ID: "loading",
+  HOME_BUTTON_ID: "home-button",
+  ERROR_ELEMENT_ID: "error-element",
   // Classes
   CONTAINER_CLASS: "container",
   RESULT_CLASS: "result",
