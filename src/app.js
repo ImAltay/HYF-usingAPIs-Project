@@ -1,7 +1,7 @@
-import { initWelcomePage } from "./pages/welcomePage.js";
+import { initPage } from "./pages/initPage.js";
 
 const loadApp = () => {
-  initWelcomePage();
+  initPage();
 };
 
 window.addEventListener("load", loadApp);

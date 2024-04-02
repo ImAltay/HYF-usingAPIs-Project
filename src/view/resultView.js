@@ -4,6 +4,7 @@ import {
   RESULT_INSTRUCTIONS_CLASS,
   RESULT_TITLE_CLASS,
   BUTTON_CLASS,
+  READ_MORE_BUTTON_CLASS,
 } from "../constants.js";
 
 export const createResultElement = (result) => {
@@ -16,7 +17,7 @@ export const createResultElement = (result) => {
   element.appendChild(title);
   // p instructions
   const instructions = document.createElement("p");
-  instructions.innerText = result.strInstructions;
+  instructions.innerText = result.strInstructions.slice(0, 90) + "..";
   instructions.classList.add(RESULT_INSTRUCTIONS_CLASS);
   element.appendChild(instructions);
   // img image
@@ -28,8 +29,12 @@ export const createResultElement = (result) => {
   // Read More
   const readMore = document.createElement("button");
   readMore.classList.add(BUTTON_CLASS);
+  readMore.classList.add(READ_MORE_BUTTON_CLASS);
   readMore.innerText = "Read More";
   element.appendChild(readMore);
+
+  // id
+  element.id = result.idDrink;
 
   return element;
 };
