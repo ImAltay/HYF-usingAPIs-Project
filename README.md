@@ -23,7 +23,6 @@ A simple recipe search app for cocktails. The app will allow users to search for
 - [x] (must have) User can search drinks by name
 - [x] (must have) User can view details about a specific drink (ingredients, instructions, etc.)
 - [x] (must have) User readable error messages
-(note: I error is missing, no time to implement)
 - [x] (must have) Simple and clean design
 - [x] (must have) folder structure similar to the browser module project.
 - [ ] (Should have) user can search drinks by ingredient
