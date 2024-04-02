@@ -4,6 +4,7 @@ import { createResultsElement } from "../view/resultsView.js";
 import { createResultElement } from "../view/resultView.js";
 import { createRecipeElement } from "../view/recipeView.js";
 import { createErrorElement } from "../view/errorView.js";
+import { createLoadingElement } from "../view/loadingView.js";
 import { constants } from "../constants.js";
 import { getDrinks } from "../feature/getDrinks.js";
 
@@ -34,11 +35,13 @@ const searchDrinksHandler = () => {
 const searchDrinks = async (results) => {
   clearRecipe();
   showResultsAgain();
+  results.innerHTML = "";
+  loading();
   const drinks = await getDrinks.byName(
     document.getElementById(constants.SEARCH_INPUT_ID).value
   );
+  doneLoading();
 
-  results.innerHTML = "";
   drinks.forEach((result) => {
     results.appendChild(createResultElement(result));
   });
@@ -47,11 +50,13 @@ const searchDrinks = async (results) => {
 };
 
 const randomDrinks = async (results) => {
-  const drinks = await getDrinks.random(10);
   results.innerHTML = "";
+  loading();
+  const drinks = await getDrinks.random(10);
   drinks.forEach((result) => {
     results.appendChild(createResultElement(result));
   });
+  doneLoading();
   readMoreButtonEventListener();
 };
 
@@ -66,7 +71,9 @@ const readMoreButtonEventListener = () => {
 };
 
 const showRecipeHandler = async (id) => {
+  loading();
   showRecipe(await getDrinks.byId(id));
+  doneLoading();
 };
 
 const showRecipe = (recipe) => {
@@ -97,4 +104,15 @@ const showResultsAgain = () => {
 const goBack = () => {
   clearRecipe();
   showResultsAgain();
+};
+
+const loading = () => {
+  const loadingElement = createLoadingElement();
+  document
+    .getElementById(constants.USER_INTERFACE_ID)
+    .appendChild(loadingElement);
+};
+
+const doneLoading = () => {
+  document.getElementById(constants.LOADING_ID).remove();
 };
