@@ -22,16 +22,21 @@ A simple recipe search app for cocktails. The app will allow users to search for
 ## User Stories
 
 
-- [ ] (must have) User can search drinks by name
-- [ ] (must have) User can view details about a specific drink (ingredients, instructions, etc.)
+- [x] (must have) User can search drinks by name
+- [x] (must have) User can view details about a specific drink (ingredients, instructions, etc.)
 - [ ] (must have) User readable error messages.
-- [ ] (must have) Simple and clean design. 
-- [ ] (must have) folder structure similar to the browser module project.
+- [x] (must have) Simple and clean design. 
+- [x] (must have) folder structure similar to the browser module project.
 - [ ] (Should have) user can search drinks by ingredient
+ (update: gave up)
 - [ ] (should have) Loading spinner when fetching data
-- [ ] (Should have) User can view a random drink
+- [ ] (Should have) User can view a random drink 
+( update: user sees  random drinks when they open the app)
 - [ ] (Should have) user can search drinks in english and spanish (API has eng/spanish version)
+(update: no time to implement)
 - [ ] (Could have) User can search drinks by category
+ (update: gave up)
 - [ ] (Could have) Translation of the app in different languages with translation API. (Assuming its free) (because I thought maybe I should have 2 different APIs)
+ (update: hahaha, no.)
 
 
