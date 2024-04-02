@@ -130,6 +130,11 @@ h1 {
   border: 1px solid #ccc;
 }
 
+#error-element {
+  margin: auto;
+  padding: 20px;
+}
+
 .btn {
   display: block;
   text-align: center;

@@ -22,10 +22,13 @@ const fetchRandomDrinks = async (amount) => {
       .then((response) => response.json())
       .then((data) => drinks.push(data.drinks[0]))
       .catch((error) => {
-        error;
+        return error;
       });
   }
 
+  if (drinks.length === 0) {
+    return;
+  }
   return drinks;
 };
 
