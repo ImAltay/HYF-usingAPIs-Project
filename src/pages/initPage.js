@@ -37,22 +37,55 @@ const searchDrinksHandler = () => {
   searchDrinks(document.getElementById(constants.RESULTS_ID));
 };
 
+// TODO fix error handling
 const searchDrinks = async (results) => {
-  // clear everything
-  clearRecipe();
-  showResultsAgain();
-  if (document.getElementById(constants.ERROR_ELEMENT_ID)) {
-    document.getElementById(constants.ERROR_ELEMENT_ID).remove();
-  }
-  results.innerHTML = "";
-  //
-  loading();
-  if (document.getElementById(constants.SEARCH_INPUT_ID).value.trim() === "") {
+  try {
+    // clear everything
+    clearRecipe();
+    showResultsAgain();
+    if (document.getElementById(constants.ERROR_ELEMENT_ID)) {
+      document.getElementById(constants.ERROR_ELEMENT_ID).remove();
+    }
+    results.innerHTML = "";
+    //
+    loading();
+    if (
+      document.getElementById(constants.SEARCH_INPUT_ID).value.trim() === ""
+    ) {
+      results.parentNode.appendChild(
+        createErrorElement(
+          "Please enter a drink name and try again. or go home.",
+          true
+        )
+      );
+      document
+        .getElementById(constants.HOME_BUTTON_ID)
+        .addEventListener("click", initPage);
+      doneLoading();
+      return;
+    }
+    const drinks = await getDrinks.byName(
+      document.getElementById(constants.SEARCH_INPUT_ID).value
+    );
+    doneLoading();
+    if (drinks === null) {
+      results.parentNode.appendChild(
+        createErrorElement("No drinks found. Try again. or go home.", true)
+      );
+      document
+        .getElementById(constants.HOME_BUTTON_ID)
+        .addEventListener("click", initPage);
+      return;
+    }
+
+    drinks.forEach((result) => {
+      results.appendChild(createResultElement(result));
+    });
+
+    readMoreButtonEventListener();
+  } catch (error) {
     results.parentNode.appendChild(
-      createErrorElement(
-        "Please enter a drink name and try again. or go home.",
-        true
-      )
+      createErrorElement("API failed us, please try again. or go home.", true)
     );
     document
       .getElementById(constants.HOME_BUTTON_ID)
@@ -60,25 +93,6 @@ const searchDrinks = async (results) => {
     doneLoading();
     return;
   }
-  const drinks = await getDrinks.byName(
-    document.getElementById(constants.SEARCH_INPUT_ID).value
-  );
-  doneLoading();
-  if (drinks === null) {
-    results.parentNode.appendChild(
-      createErrorElement("No drinks found. Try again. or go home.", true)
-    );
-    document
-      .getElementById(constants.HOME_BUTTON_ID)
-      .addEventListener("click", initPage);
-    return;
-  }
-
-  drinks.forEach((result) => {
-    results.appendChild(createResultElement(result));
-  });
-
-  readMoreButtonEventListener();
 };
 
 const randomDrinks = async (results) => {
