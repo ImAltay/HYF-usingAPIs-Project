@@ -1,8 +1,8 @@
-import { RESULTS_ID, CONTAINER_CLASS } from "../constants.js";
+import { constants } from "../constants.js";
 
 export const createResultsElement = () => {
   const element = document.createElement("div");
-  element.id = RESULTS_ID;
-  element.classList.add(CONTAINER_CLASS);
+  element.id = constants.RESULTS_ID;
+  element.classList.add(constants.CONTAINER_CLASS);
   return element;
 };

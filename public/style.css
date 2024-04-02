@@ -9,24 +9,12 @@
 
 #results {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   justify-items: center;
   padding: 20px;
   margin: auto;
   margin-top: 10px;
-}
-
-@media (max-width: 900px) {
-  #results {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  #results {
-    grid-template-columns: 1fr;
-  }
 }
 
 #recipe {
@@ -49,7 +37,7 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
   margin: auto;
 }
 
@@ -61,6 +49,9 @@
   margin: auto;
   color: white;
   height: 400px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
 }
 
 .result-title {
@@ -68,15 +59,22 @@
   font-size: 20px;
   padding: 0;
   margin: auto;
+  height: 2rem;
 }
 
 .result-instructions {
   text-overflow: ellipsis;
   height: 100px;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  padding: 20px;
+  height: 100px;
 }
 
 .result-image {
   width: 150px;
+  height: 150px;
 }
 
 h1 {
@@ -94,6 +92,10 @@ h1 {
   gap: 10px;
   border-radius: 6px;
   box-shadow: 2px 5px 0 rgba(0, 0, 0, 0.3);
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+  margin-top: 10px;
 }
 
 #search-form input {
@@ -102,8 +104,6 @@ h1 {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-
-/* READ MORE BUTTON */
 
 .btn {
   display: block;
@@ -127,6 +127,24 @@ h1 {
 .btn:hover {
   background: #fff;
   color: #111;
+}
+
+@media (max-width: 1300px) {
+  #results {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  #results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  #results {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* SEARCH BUTTON */

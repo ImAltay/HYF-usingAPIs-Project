@@ -10,7 +10,7 @@ const fetchDrinksByNames = async (search) => {
     .then((response) => response.json())
     .then((data) => data.drinks)
     .catch((error) => {
-      console.log(error);
+      error;
     });
 };
 
@@ -22,7 +22,7 @@ const fetchRandomDrinks = async (amount) => {
       .then((response) => response.json())
       .then((data) => drinks.push(data.drinks[0]))
       .catch((error) => {
-        console.log(error);
+        error;
       });
   }
 
@@ -35,6 +35,6 @@ const fetchDrinkById = async (id) => {
     .then((response) => response.json())
     .then((data) => data.drinks[0])
     .catch((error) => {
-      console.log(error);
+      error;
     });
 };

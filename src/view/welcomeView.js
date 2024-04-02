@@ -5,7 +5,7 @@
 
 export const createWelcomeElement = () => {
   const element = document.createElement("h1");
-  element.innerText = `Welcome to the Mixer App`;
+  element.innerText = `Welcome \n Search Cocktails by Name`;
 
   return element;
 };
