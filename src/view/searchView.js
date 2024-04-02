@@ -16,6 +16,7 @@ export const createSearchElement = () => {
   input.id = SEARCH_INPUT_ID;
   button.id = SEARCH_BUTTON_ID;
   button.type = "button";
+  form.onsubmit = (e) => e.preventDefault();
 
   button.innerHTML = "&#x1F50E";
 
